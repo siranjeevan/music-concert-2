@@ -105,14 +105,14 @@ const Events = () => {
       className="pt-20"
     >
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="section-padding" style={{ background: 'linear-gradient(to bottom right, #1F3A34, rgba(31, 58, 52, 0.9), rgba(31, 58, 52, 0.8))', color: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
-                Our <span className="gradient-text">Events</span>
+                Our <span style={{ background: 'linear-gradient(to right, rgba(244, 248, 249, 0.9), #F4F8F9)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>Events</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
                 Join us at our upcoming performances and see how music creates lasting change in our community
               </p>
             </div>
@@ -121,63 +121,68 @@ const Events = () => {
       </section>
 
       {/* Upcoming Events */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold" style={{ color: '#1F3A34' }}>
                 Upcoming <span className="gradient-text">Events</span>
               </h2>
-              <Calendar className="text-accent-400" size={48} />
+              <Calendar style={{ color: '#1F3A34' }} size={48} />
             </div>
           </AnimatedSection>
 
           <div className="grid gap-8">
             {upcomingEvents.map((event, index) => (
               <AnimatedSection key={event.id} delay={index * 0.1}>
-                <div className="bg-gray-800 rounded-xl overflow-hidden card-hover">
+                <div className="rounded-xl overflow-hidden card-hover shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
                   <div className="grid lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 p-8">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
-                        <span className="bg-accent-500 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span className="px-3 py-1 rounded-full text-sm font-semibold" style={{ backgroundColor: '#1F3A34', color: '#F4F8F9' }}>
                           {event.initiative}
                         </span>
-                        <div className="flex items-center text-accent-400">
+                        <div className="flex items-center" style={{ color: '#1F3A34' }}>
                           <Calendar className="mr-2" size={16} />
                           <span className="font-semibold">{event.date}</span>
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-serif font-bold mb-3">{event.title}</h3>
-                      <p className="text-gray-400 mb-4">{event.description}</p>
+                      <h3 className="text-2xl font-serif font-bold mb-3" style={{ color: '#1F3A34' }}>{event.title}</h3>
+                      <p className="mb-4" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>{event.description}</p>
                       
                       <div className="space-y-2 mb-6">
-                        <div className="flex items-center text-gray-300">
-                          <Clock className="text-accent-400 mr-3" size={16} />
+                        <div className="flex items-center" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                          <Clock style={{ color: '#1F3A34' }} className="mr-3" size={16} />
                           <span>{event.time}</span>
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <MapPin className="text-accent-400 mr-3" size={16} />
+                        <div className="flex items-center" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                          <MapPin style={{ color: '#1F3A34' }} className="mr-3" size={16} />
                           <span>{event.location}</span>
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <Users className="text-accent-400 mr-3" size={16} />
+                        <div className="flex items-center" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                          <Users style={{ color: '#1F3A34' }} className="mr-3" size={16} />
                           <span>Partner: {event.partner}</span>
                         </div>
-                        <div className="flex items-center text-gray-300">
-                          <Tag className="text-accent-400 mr-3" size={16} />
+                        <div className="flex items-center" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                          <Tag style={{ color: '#1F3A34' }} className="mr-3" size={16} />
                           <span>{event.ticketInfo}</span>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-gray-900 p-8 flex flex-col justify-center items-center text-center">
-                      <Heart className="text-accent-400 mb-4" size={48} />
-                      <h4 className="text-lg font-semibold mb-2">Get Involved</h4>
-                      <p className="text-gray-400 text-sm mb-4">
+                    <div className="p-8 flex flex-col justify-center items-center text-center" style={{ backgroundColor: 'rgba(31, 58, 52, 0.05)' }}>
+                      <Heart style={{ color: '#1F3A34' }} className="mb-4" size={48} />
+                      <h4 className="text-lg font-semibold mb-2" style={{ color: '#1F3A34' }}>Get Involved</h4>
+                      <p className="text-sm mb-4" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                         Join us and be part of creating positive change through music
                       </p>
-                      <button className="btn-primary w-full">
+                      <button 
+                        className="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        style={{ backgroundColor: '#1F3A34', color: '#F4F8F9' }}
+                        onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.9)'}
+                        onMouseLeave={(e) => e.target.style.backgroundColor = '#1F3A34'}
+                      >
                         Learn More
                       </button>
                     </div>
@@ -190,14 +195,14 @@ const Events = () => {
       </section>
 
       {/* Past Events Archive */}
-      <section className="section-padding bg-gray-800">
+      <section className="section-padding" style={{ backgroundColor: 'rgba(31, 58, 52, 0.05)' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4" style={{ color: '#1F3A34' }}>
                 Past <span className="gradient-text">Events</span>
               </h2>
-              <p className="text-xl text-gray-400">
+              <p className="text-xl" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                 Celebrating the impact we've created together
               </p>
             </div>
@@ -206,32 +211,32 @@ const Events = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {pastEvents.map((event, index) => (
               <AnimatedSection key={event.id} delay={index * 0.1}>
-                <div className="bg-gray-900 rounded-xl p-6 card-hover">
+                <div className="rounded-xl p-6 card-hover shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
                   <div className="flex items-center mb-4">
-                    <Calendar className="text-accent-400 mr-3" size={20} />
-                    <span className="text-accent-400 font-semibold">{event.date}</span>
+                    <Calendar style={{ color: '#1F3A34' }} className="mr-3" size={20} />
+                    <span className="font-semibold" style={{ color: '#1F3A34' }}>{event.date}</span>
                   </div>
                   
-                  <h3 className="text-xl font-serif font-bold mb-3">{event.title}</h3>
+                  <h3 className="text-xl font-serif font-bold mb-3" style={{ color: '#1F3A34' }}>{event.title}</h3>
                   
                   <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-gray-300">
-                      <MapPin className="text-accent-400 mr-3" size={16} />
+                    <div className="flex items-center" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                      <MapPin style={{ color: '#1F3A34' }} className="mr-3" size={16} />
                       <span>{event.location}</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <Users className="text-accent-400 mr-3" size={16} />
+                    <div className="flex items-center" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                      <Users style={{ color: '#1F3A34' }} className="mr-3" size={16} />
                       <span>{event.partner}</span>
                     </div>
                   </div>
                   
-                  <div className="bg-gray-800 rounded-lg p-4">
-                    <h4 className="font-semibold mb-2 text-accent-400">Impact Created</h4>
-                    <p className="text-gray-300 text-sm mb-2">{event.impact}</p>
-                    <p className="text-accent-400 font-semibold">{event.fundsRaised}</p>
+                  <div className="rounded-lg p-4 border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.3)' }}>
+                    <h4 className="font-semibold mb-2" style={{ color: '#1F3A34' }}>Impact Created</h4>
+                    <p className="text-sm mb-2" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>{event.impact}</p>
+                    <p className="font-semibold" style={{ color: '#1F3A34' }}>{event.fundsRaised}</p>
                   </div>
                   
-                  <span className="inline-block mt-4 bg-gray-800 text-accent-400 px-3 py-1 rounded-full text-sm">
+                  <span className="inline-block mt-4 px-3 py-1 rounded-full text-sm" style={{ backgroundColor: 'rgba(31, 58, 52, 0.1)', color: '#1F3A34' }}>
                     {event.initiative}
                   </span>
                 </div>
@@ -242,14 +247,14 @@ const Events = () => {
       </section>
 
       {/* Event Types */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4" style={{ color: '#1F3A34' }}>
                 Types of <span className="gradient-text">Events</span>
               </h2>
-              <p className="text-xl text-gray-400">
+              <p className="text-xl" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                 Different ways we create impact through music
               </p>
             </div>
@@ -257,46 +262,46 @@ const Events = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <AnimatedSection delay={0.2}>
-              <div className="bg-gray-800 rounded-xl p-8 text-center card-hover">
-                <Heart className="text-accent-400 mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-semibold mb-4">Fundraising Concerts</h3>
-                <p className="text-gray-400 mb-6">
+              <div className="rounded-xl p-8 text-center card-hover shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                <Heart style={{ color: '#1F3A34' }} className="mx-auto mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-4" style={{ color: '#1F3A34' }}>Fundraising Concerts</h3>
+                <p className="mb-6" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                   Harmony for Hope series supporting youth healthcare and educational initiatives 
                   through ticketed performances.
                 </p>
-                <div className="bg-gray-900 rounded-lg p-4">
-                  <p className="text-accent-400 font-semibold">Recent Impact:</p>
-                  <p className="text-gray-300">$15,000+ raised</p>
+                <div className="rounded-lg p-4 border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.3)' }}>
+                  <p className="font-semibold" style={{ color: '#1F3A34' }}>Recent Impact:</p>
+                  <p style={{ color: 'rgba(31, 58, 52, 0.8)' }}>$15,000+ raised</p>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
-              <div className="bg-gray-800 rounded-xl p-8 text-center card-hover">
-                <Users className="text-accent-400 mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-semibold mb-4">Community Outreach</h3>
-                <p className="text-gray-400 mb-6">
+              <div className="rounded-xl p-8 text-center card-hover shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                <Users style={{ color: '#1F3A34' }} className="mx-auto mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-4" style={{ color: '#1F3A34' }}>Community Outreach</h3>
+                <p className="mb-6" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                   Together Through Music program bringing live performances to senior centers 
                   and community spaces.
                 </p>
-                <div className="bg-gray-900 rounded-lg p-4">
-                  <p className="text-accent-400 font-semibold">Recent Impact:</p>
-                  <p className="text-gray-300">300+ seniors reached</p>
+                <div className="rounded-lg p-4 border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.3)' }}>
+                  <p className="font-semibold" style={{ color: '#1F3A34' }}>Recent Impact:</p>
+                  <p style={{ color: 'rgba(31, 58, 52, 0.8)' }}>300+ seniors reached</p>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.6}>
-              <div className="bg-gray-800 rounded-xl p-8 text-center card-hover">
-                <Calendar className="text-accent-400 mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-semibold mb-4">Cultural Festivals</h3>
-                <p className="text-gray-400 mb-6">
+              <div className="rounded-xl p-8 text-center card-hover shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                <Calendar style={{ color: '#1F3A34' }} className="mx-auto mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-4" style={{ color: '#1F3A34' }}>Cultural Festivals</h3>
+                <p className="mb-6" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                   Participating in community festivals to celebrate cultural diversity and 
                   promote cross-cultural understanding.
                 </p>
-                <div className="bg-gray-900 rounded-lg p-4">
-                  <p className="text-accent-400 font-semibold">Recent Impact:</p>
-                  <p className="text-gray-300">5+ festivals participated</p>
+                <div className="rounded-lg p-4 border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.3)' }}>
+                  <p className="font-semibold" style={{ color: '#1F3A34' }}>Recent Impact:</p>
+                  <p style={{ color: 'rgba(31, 58, 52, 0.8)' }}>5+ festivals participated</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -305,26 +310,38 @@ const Events = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-600 to-maroon-600">
+      <section className="section-padding" style={{ background: 'linear-gradient(to right, #1F3A34, rgba(31, 58, 52, 0.9))', color: '#F4F8F9' }}>
         <div className="container-max text-center">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
               Want to Book Dhwayam for Your Event?
             </h2>
-            <p className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
               Bring the power of music and social impact to your next event. All performance 
               remuneration is donated to youth welfare charities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/booking" 
-                className="bg-gray-900 hover:bg-gray-800 text-accent-400 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
+                className="font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg"
+                style={{ backgroundColor: '#F4F8F9', color: '#1F3A34' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(244, 248, 249, 0.9)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#F4F8F9'}
               >
                 Book Us Now <ArrowRight className="ml-2" size={20} />
               </a>
               <a 
                 href="/contact" 
-                className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-accent-400 font-semibold py-3 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center"
+                className="border-2 font-semibold py-3 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center"
+                style={{ borderColor: '#F4F8F9', color: '#F4F8F9', backgroundColor: 'transparent' }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#F4F8F9';
+                  e.target.style.color = '#1F3A34';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#F4F8F9';
+                }}
               >
                 Contact Us <Users className="ml-2" size={20} />
               </a>

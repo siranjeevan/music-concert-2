@@ -37,17 +37,20 @@ const Contact = () => {
       >
         <div className="container-max section-padding text-center">
           <AnimatedSection>
-            <CheckCircle className="text-accent-400 mx-auto mb-6" size={64} />
-            <h1 className="text-4xl font-serif font-bold mb-4">
+            <CheckCircle style={{ color: '#1F3A34' }} className="mx-auto mb-6" size={64} />
+            <h1 className="text-4xl font-serif font-bold mb-4" style={{ color: '#1F3A34' }}>
               Message <span className="gradient-text">Sent!</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
               Thank you for reaching out to us. We'll get back to you as soon as possible, 
               usually within 24 hours.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
-              className="btn-primary"
+              className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              style={{ backgroundColor: '#1F3A34', color: '#F4F8F9' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.9)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#1F3A34'}
             >
               Send Another Message
             </button>
@@ -65,14 +68,14 @@ const Contact = () => {
       className="pt-20"
     >
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="section-padding" style={{ background: 'linear-gradient(to bottom right, #1F3A34, rgba(31, 58, 52, 0.9), rgba(31, 58, 52, 0.8))', color: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
-                Get in <span className="gradient-text">Touch</span>
+                Get in <span style={{ background: 'linear-gradient(to right, rgba(244, 248, 249, 0.9), #F4F8F9)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>Touch</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
                 We'd love to hear from you. Reach out for collaborations, questions, 
                 or to learn more about our mission.
               </p>
@@ -82,20 +85,20 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Information */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <AnimatedSection>
-              <div className="bg-gray-800 rounded-xl p-8">
-                <h2 className="text-3xl font-serif font-bold mb-6">
+              <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                <h2 className="text-3xl font-serif font-bold mb-6" style={{ color: '#1F3A34' }}>
                   Send us a <span className="gradient-text">Message</span>
                 </h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-2 text-accent-400">
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
                         Your Name *
                       </label>
                       <input
@@ -104,12 +107,19 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:border-accent-400 focus:outline-none transition-colors"
+                        className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
+                        style={{ 
+                          backgroundColor: '#F4F8F9', 
+                          borderColor: 'rgba(31, 58, 52, 0.3)', 
+                          color: '#1F3A34'
+                        }}
+                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold mb-2 text-accent-400">
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
                         Email Address *
                       </label>
                       <input
@@ -118,14 +128,21 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:border-accent-400 focus:outline-none transition-colors"
+                        className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
+                        style={{ 
+                          backgroundColor: '#F4F8F9', 
+                          borderColor: 'rgba(31, 58, 52, 0.3)', 
+                          color: '#1F3A34'
+                        }}
+                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
                         placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-2 text-accent-400">
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
                       Subject *
                     </label>
                     <select
@@ -133,7 +150,14 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:border-accent-400 focus:outline-none transition-colors"
+                      className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
+                      style={{ 
+                        backgroundColor: '#F4F8F9', 
+                        borderColor: 'rgba(31, 58, 52, 0.3)', 
+                        color: '#1F3A34'
+                      }}
+                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
                     >
                       <option value="">Select a subject</option>
                       <option value="booking">Booking Inquiry</option>
@@ -147,7 +171,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-2 text-accent-400">
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
                       Message *
                     </label>
                     <textarea
@@ -156,14 +180,24 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:border-accent-400 focus:outline-none transition-colors resize-vertical"
+                      className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none resize-vertical"
+                      style={{ 
+                        backgroundColor: '#F4F8F9', 
+                        borderColor: 'rgba(31, 58, 52, 0.3)', 
+                        color: '#1F3A34'
+                      }}
+                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
                       placeholder="Tell us how we can help you or what you'd like to discuss..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full btn-primary flex items-center justify-center"
+                    className="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center"
+                    style={{ backgroundColor: '#1F3A34', color: '#F4F8F9' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.9)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#1F3A34'}
                   >
                     <Send className="mr-2" size={20} />
                     Send Message
@@ -176,37 +210,37 @@ const Contact = () => {
             <AnimatedSection delay={0.3}>
               <div className="space-y-8">
                 {/* Primary Contact */}
-                <div className="bg-gray-800 rounded-xl p-8">
-                  <h3 className="text-2xl font-serif font-semibold mb-6 text-accent-400">
+                <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                  <h3 className="text-2xl font-serif font-semibold mb-6" style={{ color: '#1F3A34' }}>
                     Contact Information
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start">
-                      <Mail className="text-accent-400 mr-4 mt-1 flex-shrink-0" size={24} />
+                      <Mail style={{ color: '#1F3A34' }} className="mr-4 mt-1 flex-shrink-0" size={24} />
                       <div>
-                        <h4 className="font-semibold mb-1">Email</h4>
-                        <p className="text-gray-400">dhwayamfoundation@gmail.com</p>
-                        <p className="text-gray-500 text-sm mt-1">
+                        <h4 className="font-semibold mb-1" style={{ color: '#1F3A34' }}>Email</h4>
+                        <p style={{ color: 'rgba(31, 58, 52, 0.7)' }}>dhwayamfoundation@gmail.com</p>
+                        <p className="text-sm mt-1" style={{ color: 'rgba(31, 58, 52, 0.6)' }}>
                           Primary contact for all inquiries
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <Phone className="text-accent-400 mr-4 mt-1 flex-shrink-0" size={24} />
+                      <Phone style={{ color: '#1F3A34' }} className="mr-4 mt-1 flex-shrink-0" size={24} />
                       <div>
-                        <h4 className="font-semibold mb-1">Phone</h4>
-                        <p className="text-gray-400">Available upon request</p>
-                        <p className="text-gray-500 text-sm mt-1">
+                        <h4 className="font-semibold mb-1" style={{ color: '#1F3A34' }}>Phone</h4>
+                        <p style={{ color: 'rgba(31, 58, 52, 0.7)' }}>Available upon request</p>
+                        <p className="text-sm mt-1" style={{ color: 'rgba(31, 58, 52, 0.6)' }}>
                           Phone number provided after initial contact
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <MapPin className="text-accent-400 mr-4 mt-1 flex-shrink-0" size={24} />
+                      <MapPin style={{ color: '#1F3A34' }} className="mr-4 mt-1 flex-shrink-0" size={24} />
                       <div>
-                        <h4 className="font-semibold mb-1">Location</h4>
-                        <p className="text-gray-400">Seattle, Washington</p>
-                        <p className="text-gray-500 text-sm mt-1">
+                        <h4 className="font-semibold mb-1" style={{ color: '#1F3A34' }}>Location</h4>
+                        <p style={{ color: 'rgba(31, 58, 52, 0.7)' }}>Seattle, Washington</p>
+                        <p className="text-sm mt-1" style={{ color: 'rgba(31, 58, 52, 0.6)' }}>
                           Serving the Pacific Northwest region
                         </p>
                       </div>
@@ -215,58 +249,70 @@ const Contact = () => {
                 </div>
 
                 {/* Social Media */}
-                <div className="bg-gray-800 rounded-xl p-8">
-                  <h3 className="text-2xl font-serif font-semibold mb-6 text-accent-400">
+                <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                  <h3 className="text-2xl font-serif font-semibold mb-6" style={{ color: '#1F3A34' }}>
                     Follow Our Journey
                   </h3>
-                  <p className="text-gray-400 mb-6">
+                  <p className="mb-6" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                     Stay connected with us on social media to see our latest performances, 
                     impact stories, and upcoming events.
                   </p>
                   <div className="flex space-x-4">
                     <a
                       href="#"
-                      className="bg-gray-900 p-3 rounded-lg hover:bg-gray-700 transition-colors"
+                      className="p-3 rounded-lg transition-colors"
+                      style={{ backgroundColor: 'rgba(31, 58, 52, 0.1)' }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.2)'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.1)'}
                       aria-label="Instagram"
                     >
-                      <Instagram className="text-accent-400" size={24} />
+                      <Instagram style={{ color: '#1F3A34' }} size={24} />
                     </a>
                     <a
                       href="#"
-                      className="bg-gray-900 p-3 rounded-lg hover:bg-gray-700 transition-colors"
+                      className="p-3 rounded-lg transition-colors"
+                      style={{ backgroundColor: 'rgba(31, 58, 52, 0.1)' }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.2)'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.1)'}
                       aria-label="Facebook"
                     >
-                      <Facebook className="text-accent-400" size={24} />
+                      <Facebook style={{ color: '#1F3A34' }} size={24} />
                     </a>
                     <a
                       href="#"
-                      className="bg-gray-900 p-3 rounded-lg hover:bg-gray-700 transition-colors"
+                      className="p-3 rounded-lg transition-colors"
+                      style={{ backgroundColor: 'rgba(31, 58, 52, 0.1)' }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.2)'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.1)'}
                       aria-label="Twitter"
                     >
-                      <Twitter className="text-accent-400" size={24} />
+                      <Twitter style={{ color: '#1F3A34' }} size={24} />
                     </a>
                     <a
                       href="#"
-                      className="bg-gray-900 p-3 rounded-lg hover:bg-gray-700 transition-colors"
+                      className="p-3 rounded-lg transition-colors"
+                      style={{ backgroundColor: 'rgba(31, 58, 52, 0.1)' }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.2)'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.1)'}
                       aria-label="YouTube"
                     >
-                      <Youtube className="text-accent-400" size={24} />
+                      <Youtube style={{ color: '#1F3A34' }} size={24} />
                     </a>
                   </div>
                 </div>
 
                 {/* Response Time */}
-                <div className="bg-gray-800 rounded-xl p-8">
-                  <h3 className="text-2xl font-serif font-semibold mb-4 text-accent-400">
+                <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                  <h3 className="text-2xl font-serif font-semibold mb-4" style={{ color: '#1F3A34' }}>
                     Response Time
                   </h3>
-                  <p className="text-gray-400 mb-4">
+                  <p className="mb-4" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                     We typically respond to all inquiries within 24 hours during business days. 
                     For urgent matters, please mention it in your message subject line.
                   </p>
-                  <div className="bg-gray-900 rounded-lg p-4">
-                    <p className="text-accent-400 font-semibold mb-2">Business Hours:</p>
-                    <p className="text-gray-300 text-sm">
+                  <div className="rounded-lg p-4 border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.3)' }}>
+                    <p className="font-semibold mb-2" style={{ color: '#1F3A34' }}>Business Hours:</p>
+                    <p className="text-sm" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
                       Monday - Friday: 9:00 AM - 6:00 PM PST<br />
                       Weekend: Limited availability for urgent matters
                     </p>
@@ -274,17 +320,17 @@ const Contact = () => {
                 </div>
 
                 {/* FAQ Link */}
-                <div className="bg-gray-800 rounded-xl p-8">
-                  <h3 className="text-2xl font-serif font-semibold mb-4 text-accent-400">
+                <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+                  <h3 className="text-2xl font-serif font-semibold mb-4" style={{ color: '#1F3A34' }}>
                     Quick Questions?
                   </h3>
-                  <p className="text-gray-400 mb-4">
+                  <p className="mb-4" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                     Before reaching out, you might find answers to common questions about 
                     our booking process, performance details, and impact initiatives.
                   </p>
                   <div className="space-y-2">
-                    <p className="text-gray-300 font-medium">Common Topics:</p>
-                    <ul className="text-gray-400 text-sm space-y-1">
+                    <p className="font-medium" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Common Topics:</p>
+                    <ul className="text-sm space-y-1" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
                       <li>• Booking process and requirements</li>
                       <li>• Performance duration and setup</li>
                       <li>• Pricing and nonprofit rates</li>
@@ -300,21 +346,39 @@ const Contact = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-gray-800">
+      <section className="section-padding" style={{ backgroundColor: 'rgba(31, 58, 52, 0.05)' }}>
         <div className="container-max text-center">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4" style={{ color: '#1F3A34' }}>
               Ready to Create <span className="gradient-text">Impact</span> Together?
             </h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
               Whether you're planning an event, exploring partnerships, or just want to 
               learn more about our mission, we're here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/booking" className="btn-primary">
+              <a 
+                href="/booking" 
+                className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                style={{ backgroundColor: '#1F3A34', color: '#F4F8F9' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.9)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#1F3A34'}
+              >
                 Book a Performance
               </a>
-              <a href="mailto:dhwayamfoundation@gmail.com" className="btn-secondary">
+              <a 
+                href="mailto:dhwayamfoundation@gmail.com" 
+                className="border-2 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md"
+                style={{ borderColor: '#1F3A34', color: '#1F3A34', backgroundColor: 'transparent' }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#1F3A34';
+                  e.target.style.color = '#F4F8F9';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#1F3A34';
+                }}
+              >
                 Email Us Directly
               </a>
             </div>
