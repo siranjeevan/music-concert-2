@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dhwayam - Page Not Found</title>
+    <script>
+        // Redirect to the main app and let React Router handle the routing
+        const path = window.location.pathname.replace('/dhwayam-website', '');
+        window.location.href = '/dhwayam-website/' + (path === '/' ? '' : '#' + path);
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>Redirecting...</h1>
+        <p>If you are not redirected automatically, <a href="/dhwayam-website/">click here</a>.</p>
+    </div>
+</body>
+</html>
