@@ -13,7 +13,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900 text-gray-100">
+      <div className="min-h-screen" style={{ backgroundColor: '#F4F8F9', color: '#1F3A34' }}>
         <Header />
         <AnimatePresence mode="wait">
           <Routes>
