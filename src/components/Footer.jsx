@@ -106,17 +106,7 @@ const Footer = () => {
                   Together Through Music
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/impact"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  Our Impact
-                </Link>
-              </li>
+
             </ul>
           </div>
 

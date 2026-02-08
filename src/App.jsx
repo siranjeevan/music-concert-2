@@ -6,7 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Initiatives from './pages/Initiatives';
-import Impact from './pages/Impact';
+
 import Events from './pages/Events';
 import Contact from './pages/Contact';
 
@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/initiatives" element={<Initiatives />} />
-            <Route path="/impact" element={<Impact />} />
+
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

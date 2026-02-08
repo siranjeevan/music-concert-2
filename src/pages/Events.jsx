@@ -104,10 +104,10 @@ const Events = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-20"
+      className=""
     >
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(to bottom right, #014e63, rgba(1, 78, 99, 0.9), rgba(1, 78, 99, 0.8))', color: '#F4F8F9' }}>
+      <section className="section-padding min-h-[60vh] flex items-center justify-center pt-32" style={{ background: 'linear-gradient(to bottom right, #014e63, rgba(1, 78, 99, 0.9), rgba(1, 78, 99, 0.8))', color: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -340,7 +340,7 @@ const Events = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(to right, #014e63, rgba(1, 78, 99, 0.9))', color: '#F4F8F9' }}>
+      <section className="section-padding min-h-[60vh] flex items-center justify-center pt-32" style={{ background: 'linear-gradient(to right, #014e63, rgba(1, 78, 99, 0.9))', color: '#F4F8F9' }}>
         <div className="container-max text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">

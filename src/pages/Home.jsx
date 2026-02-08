@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Users, Calendar, TrendingUp } from 'lucide-react';
+import { ArrowRight, Heart, Users, Calendar } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
 import heroImage1 from '../assets/Hero1.png';
@@ -12,7 +12,7 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-20"
+      className=""
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -47,28 +47,24 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/events" 
-                className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center"
-                style={{ backgroundColor: '#F4F8F9', color: '#014e63' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(244, 248, 249, 0.9)'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#F4F8F9'}
-              >
-                Explore Events <ArrowRight className="ml-2" size={20} />
-              </Link>
-              <Link 
-                to="/impact" 
-                className="border-2 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center"
-                style={{ borderColor: '#F4F8F9', color: '#F4F8F9', backgroundColor: 'transparent' }}
+                className="group font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_15px_rgba(244,248,249,0.3)] hover:shadow-[0_0_25px_rgba(244,248,249,0.5)] inline-flex items-center justify-center backdrop-blur-sm"
+                style={{ 
+                  background: 'rgba(244, 248, 249, 0.1)', 
+                  border: '1px solid rgba(244, 248, 249, 0.5)',
+                  color: '#F4F8F9' 
+                }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#F4F8F9';
-                  e.target.style.color = '#014e63';
+                  e.target.style.background = 'rgba(244, 248, 249, 0.2)';
+                  e.target.style.borderColor = '#F4F8F9';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.color = '#F4F8F9';
+                  e.target.style.background = 'rgba(244, 248, 249, 0.1)';
+                  e.target.style.borderColor = 'rgba(244, 248, 249, 0.5)';
                 }}
               >
-                Our Impact <Heart className="ml-2" size={20} />
+                Explore Events <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
+
             </div>
           </AnimatedSection>
         </div>
@@ -404,21 +400,7 @@ const Home = () => {
               >
                 Book Us Now <ArrowRight className="ml-2" size={20} />
               </Link>
-              <Link 
-                to="/impact" 
-                className="border-2 font-semibold py-3 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center"
-                style={{ borderColor: '#F4F8F9', color: '#F4F8F9', backgroundColor: 'transparent' }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#F4F8F9';
-                  e.target.style.color = '#014e63';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.color = '#F4F8F9';
-                }}
-              >
-                See Our Impact <TrendingUp className="ml-2" size={20} />
-              </Link>
+
             </div>
           </AnimatedSection>
         </div>

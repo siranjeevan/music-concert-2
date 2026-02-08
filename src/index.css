@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,6 +25,12 @@
     font-size: 0.8rem !important; /* Reduced from 0.875rem */
     line-height: 1.15rem;
   }
+}
+
+.alex-brush-regular {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @layer components {
@@ -134,7 +140,8 @@
 
 /* Glow effect for brand elements */
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     filter: drop-shadow(0 0 5px rgba(8, 145, 178, 0.3));
   }
   50% {
